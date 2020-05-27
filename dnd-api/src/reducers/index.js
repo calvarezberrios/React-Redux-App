@@ -23,13 +23,15 @@ export function fetchReducer(state = initialState, action) {
             return {
                 ...state,
                 spells: action.payload,
-                isFetching: false
+                isFetching: false,
+                error: ""
             };
         case FETCH_CURSPELL_SUCCESS:
             return {
                 ...state,
                 curSpell: action.payload,
-                isFetching: false
+                isFetching: false,
+                error: ""
             };
         case FETCH_FAILURE:
             return {

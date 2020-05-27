@@ -32,7 +32,7 @@ export const getCurSpell = (index) => dispatch => {
 
     axios.get(`http://www.dnd5eapi.co/api/spells/${index}`)
         .then(res => {
-            console.log("cea: actions/index.js: getCurSpell: FETCH_CURSPELL_SUCCESS: res.data: ", res.data);
+           // console.log("cea: actions/index.js: getCurSpell: FETCH_CURSPELL_SUCCESS: res.data: ", res.data);
 
             dispatch({
                 type: FETCH_CURSPELL_SUCCESS,
@@ -40,7 +40,7 @@ export const getCurSpell = (index) => dispatch => {
             });
         })
         .catch(err => {
-            console.log("cea: actions/index.js: getCurSpell: FETCH_FAILURE: err.message: ", err.message);
+           // console.log("cea: actions/index.js: getCurSpell: FETCH_FAILURE: err.message: ", err.message);
 
             dispatch({
                 type: FETCH_FAILURE,

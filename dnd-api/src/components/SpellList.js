@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getCurSpell } from "../actions";
+import { getSpells, getCurSpell } from "../actions";
 
-const SpellList = ({ spells, getCurSpell }) => {
+const SpellList = ({ match, spells, getSpells, getCurSpell }) => {
+
+    React.useEffect(() => {
+        if(spells.length === 0) getSpells(match.params.classes);
+    });
+
     return (
         <div>
             {
@@ -19,4 +24,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getCurSpell})(SpellList);
+export default connect(mapStateToProps, {getSpells, getCurSpell})(SpellList);

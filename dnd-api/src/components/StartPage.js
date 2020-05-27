@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import DnD_Logo from "../assets/images/DnD-Logo.png";
+import Sorcerer from "../assets/images/sorcerer.png";
 
 const Start = styled.div`
     text-align: center;
@@ -24,6 +25,8 @@ const StartPage = () => {
                 Hope you can enjoy the page as much as I enjoyed building it, and may this archive
                 help you in your adventures as a Sorcerer or Wizard... Let the fire burn!
             </p>
+
+            <img src = {Sorcerer} alt = "Sorcerer" />
         </Start>
     );
 };
