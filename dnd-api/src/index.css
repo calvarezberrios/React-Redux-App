@@ -107,8 +107,15 @@ html {
 .App .rightSide {
   display: flex;
   height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.App .rightSide div {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;;
+  height: 33%;
 }
 
 .App .rightSide .book {

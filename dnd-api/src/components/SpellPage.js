@@ -2,11 +2,17 @@ import React from 'react';
 import { connect } from "react-redux";
 import { getCurSpell } from "../actions";
 
-const SpellPage = ({match, curSpell, getCurSpell}) => {
+const SpellPage = ({match, curSpell, getCurSpell, isFetching, error}) => {
 
     React.useEffect(() => {
         if(Object.values(curSpell).length === 0) getCurSpell(match.params.index);
-    });
+    }, [curSpell, getCurSpell, match.params.index]);
+    
+    if(isFetching) {
+        return <div><h2>Loading {match.params.index} Spell Details...</h2></div>;
+    } else {
+        if(error !== "") return <div><h2>{error}</h2></div>;
+    }
     
     return (
         <div>
@@ -30,7 +36,8 @@ const SpellPage = ({match, curSpell, getCurSpell}) => {
 const mapStateToProps = state => {
     return {
         curSpell: state.curSpell,
-        error: state.error
+        error: state.error,
+        isFetching: state.isFetching
     };
 }
 

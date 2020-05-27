@@ -5,10 +5,12 @@ import { getSpells } from "../actions";
 
 const SpellBooks = ({ getSpells }) => {
     return (
-        <>
+
+        <div>
             <Link to = "/sorcerer-spells" className = "book" onClick = {() => getSpells("sorcerer")}>Sorcerer<br />Spells</Link>
             <Link to = "/wizard-spells" className = "book" onClick = {() => getSpells("wizard")}>Wizard<br />Spells</Link>
-        </>
+        </div>
+
     );
 };
 

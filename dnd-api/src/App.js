@@ -21,7 +21,9 @@ function App() {
         <Route path = "/spells/:index" component = {SpellPage} />
       </div>
       <div className = "rightSide">
+        <div></div>
         <SpellBooks />
+        <div></div>
       </div>
     </div>
   );
