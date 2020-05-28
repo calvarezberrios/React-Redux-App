@@ -8,7 +8,7 @@ export const FETCH_FAILURE = "FETCH_FAILURE";
 export const getSpells = (characterClass) => dispatch => {
     dispatch({ type: FETCH_START });
 
-    axios.get(`http://www.dnd5eapi.co/api/classes/${characterClass}/spells`)
+    axios.get(`https://www.dnd5eapi.co/api/classes/${characterClass}/spells`)
         .then(res => {
             //console.log("cea: actions/index.js: getSpellsData: FETCH_SPELLS_SUCCESS: res.results: ", res.data.results);
 
@@ -30,7 +30,7 @@ export const getSpells = (characterClass) => dispatch => {
 export const getCurSpell = (index) => dispatch => {
     dispatch({ type: FETCH_START });
 
-    axios.get(`http://www.dnd5eapi.co/api/spells/${index}`)
+    axios.get(`https://www.dnd5eapi.co/api/spells/${index}`)
         .then(res => {
            // console.log("cea: actions/index.js: getCurSpell: FETCH_CURSPELL_SUCCESS: res.data: ", res.data);
 
